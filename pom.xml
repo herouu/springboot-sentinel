@@ -13,12 +13,14 @@
     <module>sentinel-starter</module>
     <module>producer-demo</module>
     <module>consumer-demo</module>
+    <module>common-demo</module>
   </modules>
 
   <properties>
-    <spring.boot.version>2.7.14</spring.boot.version>
-    <spring.cloud.version>2021.0.8</spring.cloud.version>
-    <alibaba.cloud.version>2021.0.5.0</alibaba.cloud.version>
+    <spring.boot.version>2.7.15</spring.boot.version>
+    <spring.cloud.version>2021.0.4</spring.cloud.version>
+    <alibaba.cloud.version>2021.0.4.0</alibaba.cloud.version>
+    <alibaba.nacos.version>2.3.2</alibaba.nacos.version>
     <fastjson2.version>2.0.11</fastjson2.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>11</java.version>
@@ -26,6 +28,7 @@
     <maven.compiler.target>11</maven.compiler.target>
     <springdoc.version>1.6.13</springdoc.version>
     <mybatis.plus.version>3.5.2</mybatis.plus.version>
+    <blade.tool.version>4.2.0</blade.tool.version>
   </properties>
 
   <dependencies>
@@ -34,6 +37,10 @@
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
     </dependency>
   </dependencies>
 
@@ -81,6 +88,26 @@
         <artifactId>mybatis-plus-boot-starter</artifactId>
         <version>${mybatis.plus.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-extension</artifactId>
+        <version>${mybatis.plus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-annotation</artifactId>
+        <version>${mybatis.plus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.herouu</groupId>
+        <artifactId>common-demo</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+<!--      <dependency>-->
+<!--        <groupId>org.springblade</groupId>-->
+<!--        <artifactId>blade-core-boot</artifactId>-->
+<!--        <version>${blade.tool.version}</version>-->
+<!--      </dependency>-->
     </dependencies>
 
   </dependencyManagement>

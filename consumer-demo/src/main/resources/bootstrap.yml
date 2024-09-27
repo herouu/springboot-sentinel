@@ -1,0 +1,4 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: vm01.mshome.net:8848
