@@ -1,12 +1,13 @@
 package io.github.herouu.controller;
 
-import io.github.herouu.api.entity.User;
+import io.github.herouu.api.entity.Order;
 import io.github.herouu.entity.R;
-import io.github.herouu.service.IUserService;
+import io.github.herouu.feign.ProducerFeign;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 用户控制器
@@ -16,13 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-	@Autowired
-	private IUserService userService;
+    @Autowired
+    private ProducerFeign producerFeign;
 
-	@PostMapping("/user")
-	public R<Boolean> createUser(@RequestBody User user) {
-		userService.saveOrUpdate(user);
-		// orderProvider.createOrder();
-		return R.ok(Boolean.TRUE);
-	}
+
+    @GetMapping("/consumer/order")
+    public R<List<Order>> getOrder() {
+        return producerFeign.getOrder();
+    }
 }

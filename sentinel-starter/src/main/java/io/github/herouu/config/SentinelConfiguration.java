@@ -48,7 +48,7 @@ public class SentinelConfiguration {
 		public BlockExceptionHandler webmvcBlockExceptionHandler() {
 			return (request, response, e) -> {
 				response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
-				Result<?> result = Result.fail("Too many request, please retry later.");
+				Result<?> result = Result.fail("a lot request");
 				response.getWriter().print(JSONObject.toJSONString(result));
 			};
 		}

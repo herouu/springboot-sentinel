@@ -12,8 +12,8 @@ spring:
   cloud:
     sentinel:
       transport:
-        dashboard: 172.18.125.112:8858
+        dashboard: localhost:8858
     nacos:
-      server-addr: 172.18.125.112:8848
+      server-addr: localhost:8848
   application:
     name: consumer-demo

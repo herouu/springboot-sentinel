@@ -1,4 +1,4 @@
-spring:
-  cloud:
-    nacos:
-      server-addr: 172.18.125.112:8848
+#spring:
+#  cloud:
+#    nacos:
+#      server-addr: 172.18.125.112:8848
